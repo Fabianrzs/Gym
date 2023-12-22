@@ -1,4 +1,5 @@
 using Gym.Data;
+using Gym.Site;
 using System.Data.Entity.Migrations;
 
 namespace Gym
