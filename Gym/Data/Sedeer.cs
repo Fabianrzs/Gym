@@ -1,22 +1,24 @@
 ﻿using Gym.Entity;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using System.Data.Entity;
 namespace Gym.Data
 {
-    public class GymDbInitializer : DropCreateDatabaseIfModelChanges<GymDbContext>
-{
-    protected override void Seed(GymDbContext context)
+    public class GymDbInitializer
     {
-        if (!context.Credenciales.Any())
+        public GymDbInitializer()
         {
-            var credencial = new Credencial
-            {
-                Usuario = "admin",
-                Contraseña = "admin"
-            };
+        }
 
-            context.Credenciales.Add(credencial);
-            context.SaveChanges();
+        public void Configure(EntityTypeBuilder<Credencial> builder)
+        {
+            builder.HasData(
+                new Credencial
+                {
+                    Usuario = "admin",
+                    Contraseña = "admin"
+                }
+            );
         }
     }
-}
 }

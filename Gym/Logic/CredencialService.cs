@@ -6,10 +6,12 @@ namespace Gym.Logic
     public class CredentialService
 {
     private readonly GenericRepository<Credencial> _credencialRepository;
+        private readonly GymDbContext _gymDbContext;
 
-    public CredentialService()
-    {
-        _credencialRepository = new GenericRepository<Credencial>(new GymDbContext());
+        public CredentialService()
+        { 
+        _gymDbContext = new GymDbContext();
+        _credencialRepository = new GenericRepository<Credencial>(_gymDbContext);
     }
 
     public Response<bool> RegisterUsuario(string username, string password)
