@@ -18,13 +18,13 @@ namespace Gym.Logic
     {
         try
         {
-            var existingUser = _credencialRepository.GetByCondition(u => u.Usuario == username).FirstOrDefault();
+            var existingUser = _credencialRepository.GetByCondition(u => u.NombreUsuario == username).FirstOrDefault();
             if (existingUser != null)
-                return new Response<bool>(false, "El usuario ya existe", false);
+                return new Response<bool>(false, "El nombre de usuario ya existe", false);
 
             var newUser = new Credencial
             {
-                Usuario = username,
+                NombreUsuario = username,
                 Contraseña = password
             };
 
@@ -42,7 +42,7 @@ namespace Gym.Logic
     {
         try
         {
-            var existingUser = _credencialRepository.GetByCondition(u => u.Usuario == username).FirstOrDefault();
+            var existingUser = _credencialRepository.GetByCondition(u => u.NombreUsuario == username).FirstOrDefault();
             if (existingUser != null)
                 return new Response<bool>(true, "Usuario encontrado", true);
             else
@@ -54,19 +54,19 @@ namespace Gym.Logic
         }
     }
 
-    public Response<bool> Login(string username, string password)
+    public Response<Credencial> Login(string username, string password)
     {
         try
         {
-            var existingUser = _credencialRepository.GetByCondition(u => u.Usuario == username && u.Contraseña == password).FirstOrDefault();
+            var existingUser = _credencialRepository.GetByCondition(u => u.NombreUsuario == username && u.Contraseña == password).FirstOrDefault();
             if (existingUser != null)
-                return new Response<bool>(true, "Inicio de sesión exitoso", true);
+                return new Response<Credencial>(true, "Inicio de sesión exitoso", existingUser);
             else
-                return new Response<bool>(false, "Credenciales inválidas", false);
+                return new Response<Credencial>(false, "Credenciales inválidas", existingUser);
         }
         catch (Exception ex)
         {
-            return new Response<bool>(false, ex.Message, false);
+            return new Response<Credencial>(false, ex.Message, null);
         }
     }
 }

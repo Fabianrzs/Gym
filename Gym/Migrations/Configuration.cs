@@ -19,8 +19,9 @@ namespace Gym.Migrations
             context.Credenciales.AddOrUpdate(
                 new Credencial
                 {
-                    Usuario = "admin",
-                    Contraseña = "admin"
+                    NombreUsuario = "admin",
+                    Contraseña = "admin",
+                    Rol = "admin"
                 }
             );
 

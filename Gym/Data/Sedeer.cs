@@ -15,8 +15,9 @@ namespace Gym.Data
             builder.HasData(
                 new Credencial
                 {
-                    Usuario = "admin",
-                    Contraseña = "admin"
+                    NombreUsuario = "admin",
+                    Contraseña = "admin",
+                    Rol = "admin"
                 }
             );
         }

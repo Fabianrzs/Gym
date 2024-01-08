@@ -1,4 +1,5 @@
 using Gym.Logic;
+using Gym.Site;
 
 namespace Gym
 {
@@ -18,7 +19,7 @@ namespace Gym
 
         private bool validade()
         {
-            if (txtUser.Text.Equals("") ||  txtPassword.Text.Equals(""))
+            if (txtUser.Text.Equals("") || txtPassword.Text.Equals(""))
             {
                 MessageBox.Show("Verifique los campos", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return false;
@@ -32,9 +33,15 @@ namespace Gym
             if (validade())
             {
                 var respuesta = _service.Login(txtUser.Text, txtPassword.Text);
-                if (respuesta.Success) {
+                if (respuesta.Success)
+                {
+                    
+                    
                     MessageBox.Show(respuesta.Message, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                    this.Hide();
+                    Form form = (respuesta.Data.Rol == "admin")?
+                        new ViewUser() : new ConteoRegresivo(respuesta.Data.NombreUsuario);
+                    form.Show();
                 }
                 else
                 {
@@ -53,5 +60,11 @@ namespace Gym
             txtUser.Focus();
         }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            RegisterUser registroUser = new RegisterUser();
+
+            registroUser.Show();
+        }
     }
 }

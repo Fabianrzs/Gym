@@ -34,8 +34,6 @@
             label2 = new Label();
             label3 = new Label();
             label4 = new Label();
-            label5 = new Label();
-            label6 = new Label();
             label7 = new Label();
             txtIdentificacion = new TextBox();
             txtNombre = new TextBox();
@@ -44,9 +42,11 @@
             txtTelefono = new TextBox();
             txtEPS = new TextBox();
             txtNacimiento = new DateTimePicker();
-            txtFechaInicio = new DateTimePicker();
-            txtUltimoPago = new DateTimePicker();
             button1 = new Button();
+            txtUsuario = new TextBox();
+            label1 = new Label();
+            txtContrasenia = new TextBox();
+            label8 = new Label();
             SuspendLayout();
             // 
             // lbIdentificacion
@@ -99,32 +99,14 @@
             label4.AutoSize = true;
             label4.Location = new Point(115, 311);
             label4.Name = "label4";
-            label4.Size = new Size(121, 15);
+            label4.Size = new Size(119, 15);
             label4.TabIndex = 5;
-            label4.Text = "Decha de Nacimiento";
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Location = new Point(115, 369);
-            label5.Name = "label5";
-            label5.Size = new Size(86, 15);
-            label5.TabIndex = 6;
-            label5.Text = "Fecha de Inicio";
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Location = new Point(115, 426);
-            label6.Name = "label6";
-            label6.Size = new Size(73, 15);
-            label6.TabIndex = 7;
-            label6.Text = "Ultimo Pago";
+            label4.Text = "Fecha de Nacimiento";
             // 
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(115, 487);
+            label7.Location = new Point(115, 374);
             label7.Name = "label7";
             label7.Size = new Size(26, 15);
             label7.TabIndex = 8;
@@ -167,7 +149,7 @@
             // 
             // txtEPS
             // 
-            txtEPS.Location = new Point(228, 484);
+            txtEPS.Location = new Point(228, 371);
             txtEPS.Name = "txtEPS";
             txtEPS.Size = new Size(100, 23);
             txtEPS.TabIndex = 17;
@@ -179,23 +161,9 @@
             txtNacimiento.Size = new Size(200, 23);
             txtNacimiento.TabIndex = 18;
             // 
-            // txtFechaInicio
-            // 
-            txtFechaInicio.Location = new Point(262, 369);
-            txtFechaInicio.Name = "txtFechaInicio";
-            txtFechaInicio.Size = new Size(200, 23);
-            txtFechaInicio.TabIndex = 19;
-            // 
-            // txtUltimoPago
-            // 
-            txtUltimoPago.Location = new Point(262, 420);
-            txtUltimoPago.Name = "txtUltimoPago";
-            txtUltimoPago.Size = new Size(200, 23);
-            txtUltimoPago.TabIndex = 20;
-            // 
             // button1
             // 
-            button1.Location = new Point(253, 552);
+            button1.Location = new Point(242, 623);
             button1.Name = "button1";
             button1.Size = new Size(75, 23);
             button1.TabIndex = 21;
@@ -203,14 +171,49 @@
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
+            // txtUsuario
+            // 
+            txtUsuario.Location = new Point(228, 418);
+            txtUsuario.Name = "txtUsuario";
+            txtUsuario.Size = new Size(100, 23);
+            txtUsuario.TabIndex = 23;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(115, 421);
+            label1.Name = "label1";
+            label1.Size = new Size(47, 15);
+            label1.TabIndex = 22;
+            label1.Text = "Usuario";
+            label1.Click += label1_Click;
+            // 
+            // txtContrasenia
+            // 
+            txtContrasenia.Location = new Point(228, 469);
+            txtContrasenia.Name = "txtContrasenia";
+            txtContrasenia.Size = new Size(100, 23);
+            txtContrasenia.TabIndex = 25;
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Location = new Point(115, 472);
+            label8.Name = "label8";
+            label8.Size = new Size(67, 15);
+            label8.TabIndex = 24;
+            label8.Text = "Contraseña";
+            // 
             // RegisterUser
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(551, 587);
+            ClientSize = new Size(551, 658);
+            Controls.Add(txtContrasenia);
+            Controls.Add(label8);
+            Controls.Add(txtUsuario);
+            Controls.Add(label1);
             Controls.Add(button1);
-            Controls.Add(txtUltimoPago);
-            Controls.Add(txtFechaInicio);
             Controls.Add(txtNacimiento);
             Controls.Add(txtEPS);
             Controls.Add(txtTelefono);
@@ -219,8 +222,6 @@
             Controls.Add(txtNombre);
             Controls.Add(txtIdentificacion);
             Controls.Add(label7);
-            Controls.Add(label6);
-            Controls.Add(label5);
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(label2);
@@ -241,8 +242,6 @@
         private Label label2;
         private Label label3;
         private Label label4;
-        private Label label5;
-        private Label label6;
         private Label label7;
         private TextBox txtIdentificacion;
         private TextBox txtNombre;
@@ -251,8 +250,10 @@
         private TextBox txtTelefono;
         private TextBox txtEPS;
         private DateTimePicker txtNacimiento;
-        private DateTimePicker txtFechaInicio;
-        private DateTimePicker txtUltimoPago;
         private Button button1;
+        private TextBox txtUsuario;
+        private Label label1;
+        private TextBox txtContrasenia;
+        private Label label8;
     }
 }

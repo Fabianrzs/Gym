@@ -3,7 +3,7 @@
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class Initial : DbMigration
+    public partial class initial : DbMigration
     {
         public override void Up()
         {
@@ -11,10 +11,11 @@
                 "dbo.Credenciales",
                 c => new
                     {
-                        Usuario = c.String(nullable: false, maxLength: 128),
+                        NombreUsuario = c.String(nullable: false, maxLength: 128),
                         Contraseña = c.String(),
+                        Rol = c.String(),
                     })
-                .PrimaryKey(t => t.Usuario);
+                .PrimaryKey(t => t.NombreUsuario);
             
             CreateTable(
                 "dbo.Usuarios",
@@ -30,6 +31,7 @@
                         FechaInicio = c.DateTime(nullable: false),
                         UltimoPago = c.DateTime(nullable: false),
                         Eps = c.String(),
+                        Credencial = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.Id);
             

@@ -15,15 +15,17 @@ namespace Gym.Site
     public partial class RegisterUser : Form
     {
         private readonly UsuarioService _usuarioService;
+        private readonly CredentialService _credencialService;
         public RegisterUser()
         {
             InitializeComponent();
             _usuarioService = new UsuarioService();
+            _credencialService = new CredentialService();
         }
 
         private bool validade()
         {
-            if (txtApellido.Text.Equals("") || 
+            if (txtApellido.Text.Equals("") ||
                 txtDireccion.Text.Equals(""))
             {
                 MessageBox.Show("Verifique los campos", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -39,24 +41,41 @@ namespace Gym.Site
             {
                 Apellido = txtApellido.Text,
                 Direccion = txtDireccion.Text,
-                Eps = txtEPS.Text,  
+                Eps = txtEPS.Text,
                 Identificacion = txtIdentificacion.Text,
                 Nombre = txtNombre.Text,
                 Telefono = txtTelefono.Text,
-                FechaInicio = txtFechaInicio.Value,
                 FechaNacimiento = txtNacimiento.Value,
-                UltimoPago = txtUltimoPago.Value,
+                Credencial = txtContrasenia.Text,
             };
-            var respuesta = _usuarioService.InsertUsuario(usuario);
-            if (respuesta.Success)
-            {
-                MessageBox.Show(respuesta.Message, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+
+            var respuestaCrdential = _credencialService.RegisterUsuario(txtUsuario.Text, txtContrasenia.Text);
+
+            if (respuestaCrdential.Success)
+            {
+                var respuesta = _usuarioService.InsertUsuario(usuario);
+                if (respuesta.Success)
+                {
+                    MessageBox.Show(respuesta.Message, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                }
+                else
+                {
+                    MessageBox.Show(respuesta.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             else
             {
-                MessageBox.Show(respuesta.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(respuestaCrdential.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

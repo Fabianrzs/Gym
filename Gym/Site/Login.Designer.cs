@@ -33,6 +33,7 @@
             txtPassword = new TextBox();
             label1 = new Label();
             label2 = new Label();
+            button2 = new Button();
             SuspendLayout();
             // 
             // button1
@@ -78,11 +79,22 @@
             label2.TabIndex = 4;
             label2.Text = "Contraseña ";
             // 
+            // button2
+            // 
+            button2.Location = new Point(150, 419);
+            button2.Name = "button2";
+            button2.Size = new Size(132, 23);
+            button2.TabIndex = 5;
+            button2.Text = "Registrar Usuario";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
+            // 
             // Login
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(469, 502);
+            Controls.Add(button2);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(txtPassword);
@@ -102,5 +114,6 @@
         private TextBox txtPassword;
         private Label label1;
         private Label label2;
+        private Button button2;
     }
 }
