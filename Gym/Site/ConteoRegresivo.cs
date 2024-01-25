@@ -21,27 +21,66 @@ namespace Gym.Site
             _usuarioService = new UsuarioService();
             loadInitial(usuario);
         }
-        private void loadInitial(string usuario)
+        private void loadInitial(string usuarioCredencial)
         {
-            var response = _usuarioService.GetUsuarioByCredencial(usuario);
+            var response = _usuarioService.GetUsuarioByCredencial(usuarioCredencial);
+
             if (response.Success)
             {
-                userNameLbl.Text = $"{response.Data.Nombre} {response.Data.Apellido}";
-                dayDisponibleLbl.Text = $"{calculaterestantes(response.Data.UltimoPago)}";
-            }
+                var usuario = response.Data;
 
+                // Muestra la información del usuario en los controles correspondientes
+                userNameLbl.Text = $"{usuario.Nombre} {usuario.Apellido}";
+                dayDisponibleLbl.Text = $"{calculaterestantes(usuario.UltimoPago)}";
+            }
+            else
+            {
+                // Muestra un mensaje de error si no se puede cargar el usuario
+                MessageBox.Show(response.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private string calculaterestantes(DateTime fechaInicial)
         {
-            DateTime fechaSiguienteMes = fechaInicial.AddMonths(1);
+            DateTime primerDiaMesSiguiente = fechaInicial.AddMonths(1);
+            DateTime ultimoDiaMesActual = primerDiaMesSiguiente.AddDays(-1);
+            DateTime toDay = DateTime.Now;
 
-            TimeSpan diferencia = fechaSiguienteMes - fechaInicial;
+            TimeSpan diferencia = ultimoDiaMesActual - toDay;
             int diasRestantes = diferencia.Days;
             int horasRestantes = diferencia.Hours;
 
             string resultado = $"{diasRestantes} Días y {horasRestantes} Horas";
             return resultado;
+        }
+
+        private void ConteoRegresivo_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void userNameLbl_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            // cerrar ventana
+            this.Close();
+            //continuar proceso
+            Login registernew = new Login();
+            registernew.Show();
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dayDisponibleLbl_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

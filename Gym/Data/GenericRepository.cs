@@ -39,14 +39,11 @@ namespace Gym.Data
         _context.Entry(entity).State = EntityState.Modified;
     }
 
-    public void Delete(int id)
-    {
-        var entity = _dbSet.Find(id);
-        if (entity != null)
+        public void Delete(TEntity entity)
+        {
             _dbSet.Remove(entity);
-    }
-
-    public void Save()
+        }
+        public void Save()
     {
         _context.SaveChanges();
     }

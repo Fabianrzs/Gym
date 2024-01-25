@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace Gym.Site
 {
@@ -37,45 +38,82 @@ namespace Gym.Site
 
         private void button1_Click(object sender, EventArgs e)
         {
-            var usuario = new Usuario()
             {
-                Apellido = txtApellido.Text,
-                Direccion = txtDireccion.Text,
-                Eps = txtEPS.Text,
-                Identificacion = txtIdentificacion.Text,
-                Nombre = txtNombre.Text,
-                Telefono = txtTelefono.Text,
-                FechaNacimiento = txtNacimiento.Value,
-                Credencial = txtContrasenia.Text,
-            };
-
-
-            var respuestaCrdential = _credencialService.RegisterUsuario(txtUsuario.Text, txtContrasenia.Text);
-
-            if (respuestaCrdential.Success)
-            {
-                var respuesta = _usuarioService.InsertUsuario(usuario);
-                if (respuesta.Success)
+                var usuario = new Usuario()
                 {
-                    MessageBox.Show(respuesta.Message, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Apellido = txtApellido.Text,
+                    Direccion = txtDireccion.Text,
+                    Eps = txtEPS.Text,
+                    Identificacion = txtIdentificacion.Text,
+                    Nombre = txtNombre.Text,
+                    Telefono = txtTelefono.Text,
+                    FechaNacimiento = txtNacimiento.Value,
+                    
+                    Credencial = txtUsuario.Text,
+                };
 
+
+                var respuestaCrdential = _credencialService.RegisterUsuario(txtUsuario.Text, txtContrasenia.Text);
+
+                if (respuestaCrdential.Success)
+                {
+                    var respuesta = _usuarioService.InsertUsuario(usuario);
+                    if (respuesta.Success)
+                    {
+                        MessageBox.Show(respuesta.Message, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    }
+                    else
+                    {
+                        MessageBox.Show(respuesta.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
                 else
                 {
-                    MessageBox.Show(respuesta.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(respuestaCrdential.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-            }
-            else
-            {
-                MessageBox.Show(respuestaCrdential.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
 
+            }
+        }
+
+
+            private bool CamposEstanLlenos()
+            {
+                // Verificar si los campos requeridos están llenos
+                return !string.IsNullOrWhiteSpace(txtNombre.Text) &&
+                       !string.IsNullOrWhiteSpace(txtApellido.Text) &&
+                       !string.IsNullOrWhiteSpace(txtDireccion.Text) &&
+                       !string.IsNullOrWhiteSpace(txtEPS.Text) &&
+                       !string.IsNullOrWhiteSpace(txtIdentificacion.Text) &&
+                       !string.IsNullOrWhiteSpace(txtTelefono.Text) &&
+                       !string.IsNullOrWhiteSpace(txtContrasenia.Text);
+            }
+    
+    
+    private void LimpiarCampos()
+        {
+            // Establecer el texto de los TextBox a cadena vacía
+            txtNombre.Text = string.Empty;
+            txtApellido.Text = string.Empty;
+            txtDireccion.Text = string.Empty;
+            txtEPS.Text = string.Empty;
+            txtUsuario.Text = string.Empty;
+            txtIdentificacion.Text = string.Empty;
+            txtTelefono.Text = string.Empty;
+            txtNacimiento.Value = DateTime.Now; // O establecer una fecha predeterminada
+            txtContrasenia.Text = string.Empty;
+
+            
+        }
+        private void label1_Click(object sender, EventArgs e)
+        {
 
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void lbIdentificacion_Click(object sender, EventArgs e)
         {
 
         }
     }
 }
+    

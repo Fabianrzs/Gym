@@ -117,10 +117,38 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Target" xml:space="preserve">
-    <value>H4sIAAAAAAAACsxZzW7jNhC+F+g7CDq1QDbKz2UbyLtI7WRhdJ0EUbJ3Who7RClSJanAfqw999BDH6iv0KF+Kcl2pDgOFrnE5Mw3v+TMUP/9/Y//eRUz5xmkooKP3NPjE9cBHoqI8uXITfXiw0f386eff/KvonjlfCvpzg0dcnI1cp+0Ti48T4VPEBN1HNNQCiUW+jgUsUci4Z2dnPzmnZ56gBAuYjmOf59yTWPIfuDPseAhJDolbCYiYKpYx50gQ3VuSAwqISGM3C/r+HhCNHGdS0YJyg+ALVyHcC400ajdxaOCQEvBl0GCC4Q9rBNAugVhCgqtL2ryvgacnBkDvJqxhApTpUU8EPD0vPCI12Z/lV9ztxY+u0Lf6rWxOvPbyB1LiDCo6ArXaYu7GDNpSHPH5qzHNcORg8tHVeAxP8zfkTNOmU4ljDikWhqyu3TOaPgHrB/En8BHPGXMVgrVwr3GAi7dSZGA1Ot7WBSq3oh4LuFRpURS4TpeE8JrY1QIm9lzwzAZMJtdZ0ZWX4Ev9RPm+dlH17mmK4jKlSI7HjnF5EcmLVP8eYNmkDmDat/bKR7zGL2h4N/vZIdw/LeX8N2y7gV7Yxm+V2fOznyq/NsrmQrq986kaTQ8fQxPrv+U6/OzDfG3bA20kPAFOEiiIbojWoPEwz/Fk2Psfil+Od2ChiTMTv2B0yU/GQcXc5kAYzQSBxc0oRLCd/HcAzBYCH54k64hfCI3mA4xxdSo5GGxgwcsloNvowxvihrQ/bEeGdZrcUeW+0NdJergrrQr3jvekeb+JxRvhEINvPEmc7MIK73htsRGpbgwVSGraVQOGoDuWAXowlqRvAeyqnbHPW2k4k7ehLKx9pZmVwbWHZqXt2hlK+dt6eX8GUkSjIDV2xUrTpA3duMPwfDeJ84xvFBtaIEqbStJeGWTJbR2Td2O4JpKpU1jOccC7jrjKO6QNcK5xcGlqA0Ra9es2vUlk/m/ypysy7WD2uKvPXiNRsV4ZWT2QaVK4xh0mLPmmjAid7dQY8HSmPdoznZhNvoiG7Gx0R8v631snGyhy+97LQ+1Q2Cd5oKy1TG049or6tXpelXES/8OD/dWzm1+NP2O7cZuz7Sbu9nBNJGae/1Ry0alm3hDUOo+xMapV/sjWY2GDWUt98eqWwkbql7tj9TpFWzAzuZA3LJn6GCWG/3x7L7BhrPX+6NlrYMNky0MuIesCtm4hrZWzoPfIp3K2iappFcVtlVJ/aKqvfx00ilzOYnroJueaWRKXLBWGoqLKPiLjZnJoJpgRjhdgNL5aObiO8ZZ6x3mx3kT8ZSKWO+HkR/krYI/E4kHTXZfK/Z/iiixf4nJ6lcbcOBzwwCcwU8K7z7oU5PeL47yA52/ebbfy//N+X0vqPaMvhdYZw7fC609a+8FtmWejjDG+o3m6VdjdefpV0NZ8/Re7urOzG920NtzcXfe6jv4vjD25gUNnTk3fs2VbU7N/QbjXXPxJhn1PP3Kqblbw33P/kjiT0DRZQ1hPplwCE1xrEFLmilfiDK4aJqtUUnSiv0MNMEEJJcSry0SatwOQansxeQbYalJs3gO0ZTfpjpJ9aVSEM9Z45HT93bLz54Gmjr7t4n5pd7CBFSTmjN0y39PKYsqva+7Z2gbhEnLogqgVvhihHBLtLFAuhG8J1DhvgkkwE0peIA4YQimbnlAnhFkuG74VvQVliRcl63YdpCXA9F0uz+hZClJrAqMmt98+PPMl79P/wMAAP//AwCUSFEdKxwAAA==</value>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="360_F_317724775_qHtWjnT8YbRdFNIuq5PWsSYypRhOmalS" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\360_F_317724775_qHtWjnT8YbRdFNIuq5PWsSYypRhOmalS.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="DefaultSchema" xml:space="preserve">
-    <value>dbo</value>
+  <data name="CI4ThitFOqF157 2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CI4ThitFOqF157 2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pexels-anush-gorak-1431282" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pexels-anush-gorak-1431282.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8-gym-64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-gym-64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="cuantas_calorias_se_queman_en_el_gym_48685_600" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cuantas_calorias_se_queman_en_el_gym_48685_600.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8-plus-emoji-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-plus-emoji-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8-eliminar-usuaria-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-eliminar-usuaria-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8-buscar-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-buscar-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8-peso-muerto-64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-peso-muerto-64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8-cerrar-ventana-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-cerrar-ventana-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8-gym-60" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-gym-60.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

@@ -35,11 +35,11 @@ namespace Gym
                 var respuesta = _service.Login(txtUser.Text, txtPassword.Text);
                 if (respuesta.Success)
                 {
-                    
-                    
+
+
                     MessageBox.Show(respuesta.Message, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Hide();
-                    Form form = (respuesta.Data.Rol == "admin")?
+                    Form form = (respuesta.Data.Rol == "admin") ?
                         new ViewUser() : new ConteoRegresivo(respuesta.Data.NombreUsuario);
                     form.Show();
                 }
@@ -62,9 +62,19 @@ namespace Gym
 
         private void button2_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
             RegisterUser registroUser = new RegisterUser();
 
             registroUser.Show();
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            txtPassword.UseSystemPasswordChar = checkBox1.Checked;
         }
     }
 }

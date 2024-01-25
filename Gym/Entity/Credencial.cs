@@ -8,9 +8,11 @@ namespace Gym.Entity
     public class Credencial
 {
         [Key]
-        public string NombreUsuario { get; set; }
-        public string Contraseña { get; set; }
+
+        public string NombreUsuario { get; set; } = string.Empty;
+        public string Contraseña { get; set; } = string.Empty;
         public string Rol { get; set; } = "Usuario";
+
 
     }
 }

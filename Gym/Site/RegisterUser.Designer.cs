@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegisterUser));
             lbIdentificacion = new Label();
             lbNombre = new Label();
             lbApellido = new Label();
@@ -47,168 +48,251 @@
             label1 = new Label();
             txtContrasenia = new TextBox();
             label8 = new Label();
+            label6 = new Label();
+            pictureBox1 = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // lbIdentificacion
             // 
             lbIdentificacion.AutoSize = true;
-            lbIdentificacion.Location = new Point(115, 38);
+            lbIdentificacion.Font = new Font("Segoe UI", 8F, FontStyle.Bold, GraphicsUnit.Point);
+            lbIdentificacion.ForeColor = SystemColors.Control;
+            lbIdentificacion.Location = new Point(13, 61);
+            lbIdentificacion.Margin = new Padding(4, 0, 4, 0);
             lbIdentificacion.Name = "lbIdentificacion";
-            lbIdentificacion.Size = new Size(79, 15);
+            lbIdentificacion.Size = new Size(116, 21);
             lbIdentificacion.TabIndex = 0;
             lbIdentificacion.Text = "Identificacion";
             // 
             // lbNombre
             // 
             lbNombre.AutoSize = true;
-            lbNombre.Location = new Point(115, 86);
+            lbNombre.Font = new Font("Segoe UI", 8F, FontStyle.Bold, GraphicsUnit.Point);
+            lbNombre.ForeColor = SystemColors.Control;
+            lbNombre.Location = new Point(25, 131);
+            lbNombre.Margin = new Padding(4, 0, 4, 0);
             lbNombre.Name = "lbNombre";
-            lbNombre.Size = new Size(51, 15);
+            lbNombre.Size = new Size(80, 21);
             lbNombre.TabIndex = 1;
-            lbNombre.Text = "Nombre";
+            lbNombre.Text = "Nombres";
             // 
             // lbApellido
             // 
             lbApellido.AutoSize = true;
-            lbApellido.Location = new Point(115, 138);
+            lbApellido.Font = new Font("Segoe UI", 8F, FontStyle.Bold, GraphicsUnit.Point);
+            lbApellido.ForeColor = SystemColors.Control;
+            lbApellido.Location = new Point(25, 213);
+            lbApellido.Margin = new Padding(4, 0, 4, 0);
             lbApellido.Name = "lbApellido";
-            lbApellido.Size = new Size(51, 15);
+            lbApellido.Size = new Size(82, 21);
             lbApellido.TabIndex = 2;
-            lbApellido.Text = "Apellido";
+            lbApellido.Text = "Apellidos";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(115, 192);
+            label2.Font = new Font("Segoe UI", 8F, FontStyle.Bold, GraphicsUnit.Point);
+            label2.ForeColor = SystemColors.Control;
+            label2.Location = new Point(25, 287);
+            label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
-            label2.Size = new Size(61, 15);
+            label2.Size = new Size(89, 21);
             label2.TabIndex = 3;
             label2.Text = "Dirreccion";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(115, 250);
+            label3.Font = new Font("Segoe UI", 8F, FontStyle.Bold, GraphicsUnit.Point);
+            label3.ForeColor = SystemColors.Control;
+            label3.Location = new Point(37, 352);
+            label3.Margin = new Padding(4, 0, 4, 0);
             label3.Name = "label3";
-            label3.Size = new Size(52, 15);
+            label3.Size = new Size(77, 21);
             label3.TabIndex = 4;
             label3.Text = "Telefono";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(115, 311);
+            label4.Font = new Font("Segoe UI", 8F, FontStyle.Bold, GraphicsUnit.Point);
+            label4.ForeColor = SystemColors.Control;
+            label4.Location = new Point(449, 287);
+            label4.Margin = new Padding(4, 0, 4, 0);
             label4.Name = "label4";
-            label4.Size = new Size(119, 15);
+            label4.Size = new Size(171, 21);
             label4.TabIndex = 5;
             label4.Text = "Fecha de Nacimiento";
             // 
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(115, 374);
+            label7.Font = new Font("Segoe UI", 8F, FontStyle.Bold, GraphicsUnit.Point);
+            label7.ForeColor = SystemColors.Control;
+            label7.Location = new Point(581, 61);
+            label7.Margin = new Padding(4, 0, 4, 0);
             label7.Name = "label7";
-            label7.Size = new Size(26, 15);
+            label7.Size = new Size(38, 21);
             label7.TabIndex = 8;
             label7.Text = "EPS";
             // 
             // txtIdentificacion
             // 
-            txtIdentificacion.Location = new Point(228, 35);
+            txtIdentificacion.BackColor = SystemColors.WindowFrame;
+            txtIdentificacion.ForeColor = SystemColors.Window;
+            txtIdentificacion.Location = new Point(138, 61);
+            txtIdentificacion.Margin = new Padding(4, 5, 4, 5);
             txtIdentificacion.Name = "txtIdentificacion";
-            txtIdentificacion.Size = new Size(100, 23);
+            txtIdentificacion.Size = new Size(141, 31);
             txtIdentificacion.TabIndex = 9;
             // 
             // txtNombre
             // 
-            txtNombre.Location = new Point(228, 83);
+            txtNombre.BackColor = SystemColors.WindowFrame;
+            txtNombre.ForeColor = SystemColors.Window;
+            txtNombre.Location = new Point(138, 128);
+            txtNombre.Margin = new Padding(4, 5, 4, 5);
             txtNombre.Name = "txtNombre";
-            txtNombre.Size = new Size(100, 23);
+            txtNombre.Size = new Size(141, 31);
             txtNombre.TabIndex = 10;
             // 
             // txtApellido
             // 
-            txtApellido.Location = new Point(228, 135);
+            txtApellido.BackColor = SystemColors.WindowFrame;
+            txtApellido.ForeColor = SystemColors.Window;
+            txtApellido.Location = new Point(138, 207);
+            txtApellido.Margin = new Padding(4, 5, 4, 5);
             txtApellido.Name = "txtApellido";
-            txtApellido.Size = new Size(100, 23);
+            txtApellido.Size = new Size(141, 31);
             txtApellido.TabIndex = 11;
             // 
             // txtDireccion
             // 
-            txtDireccion.Location = new Point(228, 189);
+            txtDireccion.BackColor = SystemColors.WindowFrame;
+            txtDireccion.ForeColor = SystemColors.Window;
+            txtDireccion.Location = new Point(138, 284);
+            txtDireccion.Margin = new Padding(4, 5, 4, 5);
             txtDireccion.Name = "txtDireccion";
-            txtDireccion.Size = new Size(100, 23);
+            txtDireccion.Size = new Size(141, 31);
             txtDireccion.TabIndex = 12;
             // 
             // txtTelefono
             // 
-            txtTelefono.Location = new Point(228, 247);
+            txtTelefono.BackColor = SystemColors.WindowFrame;
+            txtTelefono.ForeColor = SystemColors.Window;
+            txtTelefono.Location = new Point(138, 352);
+            txtTelefono.Margin = new Padding(4, 5, 4, 5);
             txtTelefono.Name = "txtTelefono";
-            txtTelefono.Size = new Size(100, 23);
+            txtTelefono.Size = new Size(141, 31);
             txtTelefono.TabIndex = 13;
             // 
             // txtEPS
             // 
-            txtEPS.Location = new Point(228, 371);
+            txtEPS.BackColor = SystemColors.WindowFrame;
+            txtEPS.ForeColor = SystemColors.Window;
+            txtEPS.Location = new Point(627, 56);
+            txtEPS.Margin = new Padding(4, 5, 4, 5);
             txtEPS.Name = "txtEPS";
-            txtEPS.Size = new Size(100, 23);
+            txtEPS.Size = new Size(141, 31);
             txtEPS.TabIndex = 17;
             // 
             // txtNacimiento
             // 
-            txtNacimiento.Location = new Point(262, 305);
+            txtNacimiento.Location = new Point(628, 282);
+            txtNacimiento.Margin = new Padding(4, 5, 4, 5);
             txtNacimiento.Name = "txtNacimiento";
-            txtNacimiento.Size = new Size(200, 23);
+            txtNacimiento.Size = new Size(145, 31);
             txtNacimiento.TabIndex = 18;
             // 
             // button1
             // 
-            button1.Location = new Point(242, 623);
+            button1.BackColor = Color.FromArgb(255, 128, 128);
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("Segoe UI", 8F, FontStyle.Bold, GraphicsUnit.Point);
+            button1.Location = new Point(341, 405);
+            button1.Margin = new Padding(4, 5, 4, 5);
             button1.Name = "button1";
-            button1.Size = new Size(75, 23);
+            button1.Size = new Size(107, 31);
             button1.TabIndex = 21;
             button1.Text = "Guardar";
-            button1.UseVisualStyleBackColor = true;
+            button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
             // txtUsuario
             // 
-            txtUsuario.Location = new Point(228, 418);
+            txtUsuario.BackColor = SystemColors.WindowFrame;
+            txtUsuario.ForeColor = SystemColors.Window;
+            txtUsuario.Location = new Point(627, 135);
+            txtUsuario.Margin = new Padding(4, 5, 4, 5);
             txtUsuario.Name = "txtUsuario";
-            txtUsuario.Size = new Size(100, 23);
+            txtUsuario.Size = new Size(141, 31);
             txtUsuario.TabIndex = 23;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(115, 421);
+            label1.Font = new Font("Segoe UI", 8F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.ForeColor = SystemColors.Control;
+            label1.Location = new Point(550, 141);
+            label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new Size(47, 15);
+            label1.Size = new Size(69, 21);
             label1.TabIndex = 22;
             label1.Text = "Usuario";
             label1.Click += label1_Click;
             // 
             // txtContrasenia
             // 
-            txtContrasenia.Location = new Point(228, 469);
+            txtContrasenia.BackColor = SystemColors.WindowFrame;
+            txtContrasenia.ForeColor = SystemColors.Window;
+            txtContrasenia.Location = new Point(627, 220);
+            txtContrasenia.Margin = new Padding(4, 5, 4, 5);
             txtContrasenia.Name = "txtContrasenia";
-            txtContrasenia.Size = new Size(100, 23);
+            txtContrasenia.Size = new Size(141, 31);
             txtContrasenia.TabIndex = 25;
             // 
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new Point(115, 472);
+            label8.Font = new Font("Segoe UI", 8F, FontStyle.Bold, GraphicsUnit.Point);
+            label8.ForeColor = SystemColors.Control;
+            label8.Location = new Point(524, 225);
+            label8.Margin = new Padding(4, 0, 4, 0);
             label8.Name = "label8";
-            label8.Size = new Size(67, 15);
+            label8.Size = new Size(96, 21);
             label8.TabIndex = 24;
             label8.Text = "Contraseña";
             // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Segoe UI", 17F, FontStyle.Bold, GraphicsUnit.Point);
+            label6.ForeColor = SystemColors.Control;
+            label6.Location = new Point(274, 9);
+            label6.Name = "label6";
+            label6.Size = new Size(229, 46);
+            label6.TabIndex = 26;
+            label6.Text = "Energymclub";
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = Properties.Resources.CI4ThitFOqF157_2;
+            pictureBox1.Location = new Point(312, 98);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(149, 148);
+            pictureBox1.SizeMode = PictureBoxSizeMode.CenterImage;
+            pictureBox1.TabIndex = 27;
+            pictureBox1.TabStop = false;
+            // 
             // RegisterUser
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(551, 658);
+            BackColor = SystemColors.ControlText;
+            ClientSize = new Size(787, 450);
+            Controls.Add(pictureBox1);
+            Controls.Add(label6);
             Controls.Add(txtContrasenia);
             Controls.Add(label8);
             Controls.Add(txtUsuario);
@@ -228,8 +312,12 @@
             Controls.Add(lbApellido);
             Controls.Add(lbNombre);
             Controls.Add(lbIdentificacion);
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            Margin = new Padding(4, 5, 4, 5);
             Name = "RegisterUser";
-            Text = "RegisterUser";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Registrarse";
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -255,5 +343,7 @@
         private Label label1;
         private TextBox txtContrasenia;
         private Label label8;
+        private Label label6;
+        private PictureBox pictureBox1;
     }
 }
