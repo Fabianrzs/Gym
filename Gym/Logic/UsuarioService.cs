@@ -7,26 +7,25 @@ namespace Gym.Logic
 {
     public class UsuarioService
     {
-        GymDbContext dbContext = new GymDbContext();
         private readonly GenericRepository<Usuario> _usuarioRepository;
         private readonly CredentialService _credencialService;
     
         public UsuarioService()
         {
-            _usuarioRepository = new GenericRepository<Usuario>(new GymDbContext());
+            _usuarioRepository = new GenericRepository<Usuario>();
             _credencialService = new CredentialService();
         }
 
-        public Response<IQueryable<Usuario>> GetAllUsuarios()
+        public Response<IEnumerable<Usuario>> GetAllUsuarios()
         {
             try
             {
                 var usuarios = _usuarioRepository.GetAll();
-                return new Response<IQueryable<Usuario>>(true, "Operación exitosa", usuarios);
+                return new Response<IEnumerable<Usuario>>(true, "Operación exitosa", usuarios);
             }
             catch (Exception ex)
             {
-                return new Response<IQueryable<Usuario>>(false, ex.Message, Enumerable.Empty<Usuario>().AsQueryable());
+                return new Response<IEnumerable<Usuario>>(false, ex.Message, Enumerable.Empty<Usuario>().AsQueryable());
             }
         }
 
@@ -50,7 +49,9 @@ namespace Gym.Logic
         {
             try
             {
-                var usuario = _usuarioRepository.GetByCondition(x => x.Credencial == credencial).FirstOrDefault();
+                Dictionary<string, object> conditions = new Dictionary<string, object>();
+                conditions.Add("Credencial", credencial);
+                var usuario = _usuarioRepository.GetByCondition(conditions).FirstOrDefault();
                 if (usuario != null)
                     return new Response<Usuario>(true, "Operación exitosa", usuario);
                 else
@@ -66,7 +67,10 @@ namespace Gym.Logic
         {
             try
             {
-                var findUser = _usuarioRepository.GetByCondition(x => x.Identificacion == usuario.Identificacion).FirstOrDefault();
+
+                Dictionary<string, object> conditions = new Dictionary<string, object>();
+                conditions.Add("Identificacion", usuario.Identificacion);
+                var findUser = _usuarioRepository.GetByCondition(conditions).FirstOrDefault();
                 if (findUser == null)
                 {
                     _usuarioRepository.Insert(usuario);
@@ -125,20 +129,17 @@ namespace Gym.Logic
                 var usuario = _usuarioRepository.GetById(id);
                 if (usuario != null)
                 {
-                    // Eliminar credenciales
                     var responseCredenciales = _credencialService.EliminarCredenciales(usuario.Credencial);
 
                     if (responseCredenciales.Success)
                     {
-                        // Eliminar usuario si las credenciales se eliminaron con éxito
-                        _usuarioRepository.Delete(usuario);
+                        _usuarioRepository.Delete(id);
                         _usuarioRepository.Save();
 
                         return new Response<bool>(true, "Usuario y credenciales eliminados exitosamente", true);
                     }
                     else
                     {
-                        // Las credenciales no se pudieron eliminar
                         return new Response<bool>(false, "Error al eliminar credenciales", false);
                     }
                 }

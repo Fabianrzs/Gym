@@ -1,6 +1,5 @@
 ﻿using Gym.Data;
 using Gym.Entity;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 
 namespace Gym.Logic
@@ -9,32 +8,29 @@ namespace Gym.Logic
     {
         private readonly GenericRepository<Credencial> _credencialRepository;
         private readonly GenericRepository<Usuario> _usuarioRepository;
-        private readonly GymDbContext _gymDbContext;
 
         public CredentialService()
         {
-            _gymDbContext = new GymDbContext();
-            _credencialRepository = new GenericRepository<Credencial>(_gymDbContext);
-            _usuarioRepository = new GenericRepository<Usuario>(_gymDbContext);
+            _credencialRepository = new GenericRepository<Credencial>();
+            _usuarioRepository = new GenericRepository<Usuario>();
         }
 
         public Response<bool> EliminarCredenciales(string nombreUsuario)
         {
             try
             {
-                // Eliminar las credenciales del usuario
-                var credencialEntity = _credencialRepository.GetByCondition(x => x.NombreUsuario == nombreUsuario).FirstOrDefault();
+                Dictionary<string, object> conditions = new Dictionary<string, object>();
+                conditions.Add("NombreUsuario", nombreUsuario);               
+                var credencialEntity = _credencialRepository.GetByCondition(conditions).FirstOrDefault();
                 
                 if (credencialEntity != null)
                 {
-                    _credencialRepository.Delete(credencialEntity);
+                    _credencialRepository.Delete2(credencialEntity.NombreUsuario);
                     _credencialRepository.Save();
-                    // Si se completaron ambas eliminaciones, devolver una respuesta con éxito verdadero
                     return new Response<bool>(true, "Usuario y credenciales eliminados exitosamente", true);
                 }
                 else
                 {
-                    // Si no se encuentran credenciales, devolver una respuesta con éxito falso
                     return new Response<bool>(false, "Credenciales no encontradas", false);
                 }
 
@@ -53,7 +49,9 @@ namespace Gym.Logic
         {
             try
             {
-                var existingUser = _credencialRepository.GetByCondition(u => u.NombreUsuario == username).FirstOrDefault();
+                Dictionary<string, object> conditions = new Dictionary<string, object>();
+                conditions.Add("NombreUsuario", username);
+                var existingUser = _credencialRepository.GetByCondition(conditions).FirstOrDefault();
                 if (existingUser != null)
                     return new Response<bool>(false, "El nombre de usuario ya existe", false);
 
@@ -77,7 +75,9 @@ namespace Gym.Logic
     {
         try
         {
-            var existingUser = _credencialRepository.GetByCondition(u => u.NombreUsuario == username).FirstOrDefault();
+            Dictionary<string, object> conditions = new Dictionary<string, object>();
+            conditions.Add("NombreUsuario", username);
+            var existingUser = _credencialRepository.GetByCondition(conditions).FirstOrDefault();
             if (existingUser != null)
                 return new Response<bool>(true, "Usuario encontrado", true);
             else
@@ -93,7 +93,11 @@ namespace Gym.Logic
     {
         try
         {
-            var existingUser = _credencialRepository.GetByCondition(u => u.NombreUsuario == username && u.Contraseña == password).FirstOrDefault();
+
+                Dictionary<string, object> conditions = new Dictionary<string, object>();
+                conditions.Add("NombreUsuario", username);
+                conditions.Add("Contraseña", password);
+                var existingUser = _credencialRepository.GetByCondition(conditions).FirstOrDefault();
                 if (existingUser != null)
                     return new Response<Credencial>(true, "Inicio de sesión exitoso", existingUser);
                 else

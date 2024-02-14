@@ -159,7 +159,7 @@ namespace Gym.Site
         private void txtNombreBuscar_TextChanged(object sender, EventArgs e)
         {
             // Obtener el texto de búsqueda
-            textoBusqueda = txtNombreBuscar.Text;
+            //textoBusqueda = txtNombreBuscar.Text;
 
             // Realizar la búsqueda y actualizar el DataGridView
             btnBuscar_Click(sender, e);
